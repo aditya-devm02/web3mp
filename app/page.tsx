@@ -8,6 +8,7 @@ import ProductList from "@/app/components/ProductList";
 import Cart from "@/app/components/Cart";
 import { motion } from "framer-motion";
 import { Orbitron } from "next/font/google";
+import CheckJobStatus from "./components/CheckJobStatus";
 
 // Blockchain-inspired Font
 const orbitron = Orbitron({ subsets: ["latin"], weight: "700" });
@@ -147,6 +148,11 @@ export default function Home() {
                     transition={{ duration: 0.5 }}
                 >
                     <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+                    
+                    {/* Attractive CheckJobStatus Button */}
+                    <div className="mt-6 flex justify-center">
+    <CheckJobStatus />
+</div>
                 </motion.div>
             )}
 

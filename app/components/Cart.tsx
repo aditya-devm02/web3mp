@@ -1,15 +1,27 @@
 import React from "react";
 import { encodeFunctionData } from "viem";
-import { evmRawTransaction , useOkto} from "@okto_web3/react-sdk";
+import { evmRawTransaction , useOkto } from "@okto_web3/react-sdk";
+import { getAccount } from "@okto_web3/react-sdk";
 
 export default function Cart({ cartItems, removeFromCart }) {
   const oktoClient = useOkto();
   const total = cartItems.reduce(( sum, item ) => sum + item.price, 0);
 
+  async function getacc() {
+    const accounts = await getAccount(oktoClient);
+    const base_testnet = accounts.find(account => account.networkName === "BASE_TESTNET");
+    return base_testnet;
+}
+  
+
   const handleClick = async () => {
     
     try {
-      const contractAddress = "0x2182c846304c3a2a2854129c00f4cb39b41a7141";
+      const senderAccount = await getacc();
+            console.log("recipient", senderAccount);
+            if (!senderAccount || !senderAccount.address) 
+                throw new Error("Sender account or address is invalid.");
+      const contractAddress = "0x1d142a62E2e98474093545D4A3A0f7DB9503B8BD";
       const functionName = "addPayment";
       const functionArgs = [30, '1,2'];
 
@@ -134,7 +146,7 @@ export default function Cart({ cartItems, removeFromCart }) {
       });
 
       const rawTxParams = {
-        networkId: "eip155:137", // Change to Polygon Amoy networkId if needed
+        networkId: "8970cafe-4fc2-3a71-a7d3-77a672b749e9", // Change to Polygon Amoy networkId if needed
         transaction: {
           to: contractAddress,
           data: functionData,
@@ -142,11 +154,12 @@ export default function Cart({ cartItems, removeFromCart }) {
       };
 
       const result = await evmRawTransaction(oktoClient, {
-        networkId: "eip155:84537",
+        caip2Id: "eip155:84532",
         transaction: {
-          to: contractAddress,
+          from: senderAccount.address as '0x${string}', // Add the sender's address
+          to: contractAddress , // Fix applied here
           data: functionData,
-        },
+        }
       });
       console.log("Transaction successful", result);
     } catch (error) {
@@ -184,4 +197,5 @@ export default function Cart({ cartItems, removeFromCart }) {
       </div>
     </div>
   );
+
 }
