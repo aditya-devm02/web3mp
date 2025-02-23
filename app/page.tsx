@@ -22,7 +22,7 @@ export default function Home() {
     const [portfolioActivity, setPortfolioActivity] = useState(null);
     const [showActivity, setShowActivity] = useState(false); // Toggle activity display
 
-    //@ts-ignore
+    //@ts-expect-error
     const idToken = useMemo(() => (session ? session.id_token : null), [session]);
 
     async function handleAuthenticate(): Promise<any> {

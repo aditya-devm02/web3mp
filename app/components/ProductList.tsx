@@ -1,5 +1,6 @@
 import React from "react";
 import { products } from "../data/products";
+import Image from 'next/image';
 
 export default function ProductList({ addToCart }) {
   return (
@@ -11,9 +12,11 @@ export default function ProductList({ addToCart }) {
           onMouseEnter={(e) => e.currentTarget.classList.add("z-50", "scale-105", "shadow-2xl")}
           onMouseLeave={(e) => e.currentTarget.classList.remove("z-50", "scale-105", "shadow-2xl")}
         >
-          <img 
+          <Image 
             src={product.image} 
             alt={product.name} 
+            width={500}
+            height={300}
             className="w-full h-48 object-cover rounded-lg"
           />
           <h2 className="text-2xl font-bold text-blue-400 mt-4">{product.name}</h2>

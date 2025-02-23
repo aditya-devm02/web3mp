@@ -145,13 +145,7 @@ export default function Cart({ cartItems, removeFromCart }) {
         args: functionArgs,
       });
 
-      const rawTxParams = {
-        networkId: "8970cafe-4fc2-3a71-a7d3-77a672b749e9", // Change to Polygon Amoy networkId if needed
-        transaction: {
-          to: contractAddress,
-          data: functionData,
-        },
-      };
+      const rawTxParams = {};
 
       const result = await evmRawTransaction(oktoClient, {
         caip2Id: "eip155:84532",
