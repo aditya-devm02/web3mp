@@ -1,0 +1,58 @@
+export const products = [
+  {
+    id: 1,
+    name: "Ledger Nano X",
+    price: 129.99,
+    description: "Secure your crypto with the best hardware wallet.",
+    image: "https://c7.alamy.com/comp/2HG5F63/galicia-spain-january-18-2022-ledger-nano-s-cryptocurrency-hardware-wallet-on-laptop-2HG5F63.jpg",
+  },
+  {
+    id: 2,
+    name: "Ethereum Hoodie",
+    price: 49.99,
+    description: "Stylish Ethereum-branded hoodie for blockchain enthusiasts.",
+    image: "https://i.etsystatic.com/56746543/r/il/ddae31/6584367197/il_1588xN.6584367197_sueh.jpg",
+  },
+  {
+    id: 3,
+    name: "Bitcoin Coffee Mug",
+    price: 19.99,
+    description: "Start your day with crypto vibes and hot coffee.",
+    image: "https://i.etsystatic.com/20127227/r/il/d4530b/3449494828/il_1588xN.3449494828_kkkh.jpg",
+  },
+  {
+    id: 4,
+    name: "Solana Cap",
+    price: 24.99,
+    description: "Show off your love for Solana with this sleek cap.",
+    image: "https://images-cdn.ubuy.co.in/67b7ae0be304da3dba75f02b-solana-hat-sol-logo-embroidered-dad.jpg",
+  },
+  {
+    id: 5,
+    name: "NFT Art Print",
+    price: 199.99,
+    description: "Exclusive NFT-inspired art print for Web3 lovers.",
+    image: "https://i.etsystatic.com/55663234/r/il/fb6c83/6437760073/il_1588xN.6437760073_6du0.jpg",
+  },
+  {
+    id: 6,
+    name: "Polygon Gaming Mousepad",
+    price: 34.99,
+    description: "Smooth gaming experience with this Polygon-branded mousepad.",
+    image: "https://i.etsystatic.com/20114492/r/il/bba612/3626895806/il_1588xN.3626895806_haj4.jpg",
+  },
+  {
+    id: 7,
+    name: "Crypto Miner USB",
+    price: 79.99,
+    description: "Mine crypto on the go with this mini USB miner.",
+    image: "https://m.media-amazon.com/images/I/71CRnNAH+aL._SL1500_.jpg",
+  },
+  {
+    id: 8,
+    name: "Web3 T-Shirt",
+    price: 39.99,
+    description: "Express your passion for decentralized technology.",
+    image: "https://i.etsystatic.com/21309686/r/il/bf3e6c/3624220947/il_1588xN.3624220947_4rq0.jpg",
+  },
+];
