@@ -4,7 +4,7 @@ import { useOkto } from "@okto_web3/react-sdk";
  
 interface GetButtonProps {
     title: string;
-    apiFn: any;
+    apiFn: (client: OktoClient) => Promise<any>;
 }
  
 const GetButton: React.FC<GetButtonProps> = ({ title, apiFn }) => {
@@ -14,13 +14,13 @@ const GetButton: React.FC<GetButtonProps> = ({ title, apiFn }) => {
  
     const handleButtonClick = () => {
         apiFn(oktoClient)
-        .then((result: any) => {
+        .then((result: SomeType) => {
             console.log(`${title}:`, result);
             const resultData = JSON.stringify(result, null, 2);
             setResultData(resultData !== "null" ? resultData : "No result");
             setModalVisible(true);
         })
-        .catch((error: any) => {
+        .catch((error: SomeErrorType) => {
             console.error(`${title} error:`, error);
             setResultData(`error: ${error}`);
             setModalVisible(true);

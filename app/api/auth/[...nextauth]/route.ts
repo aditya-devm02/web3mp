@@ -21,7 +21,7 @@ export const authOptions: AuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      //@ts-ignore
+      // @ts-expect-error "Explain why this is necessary"
       session.id_token = token.id_token;
       return session;
     },

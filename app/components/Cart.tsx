@@ -145,8 +145,6 @@ export default function Cart({ cartItems, removeFromCart }) {
         args: functionArgs,
       });
 
-      const rawTxParams = {};
-
       const result = await evmRawTransaction(oktoClient, {
         caip2Id: "eip155:84532",
         transaction: {
